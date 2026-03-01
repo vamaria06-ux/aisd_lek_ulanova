@@ -1,3 +1,4 @@
+#include <cstddef>
 template <class T>
 struct Bilist 
 {
@@ -81,7 +82,17 @@ Bilist<T>* clear(Bilist<T>* h, Bilist<T>* e) noexcept
     h = cut(h);
   }
   return h;
-}
+};
+// массив конвертируется в список
+template<class T>
+Bilist<T>* insert(Bilist<T>* h, const T* arr, size_t n)
+{
+  for (size_t i = 0; i < n; ++i)
+  {
+    h = insert(h, arr[i]);
+  }
+  return h;
+};
 
 int main()
 {}
