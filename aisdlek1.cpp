@@ -35,7 +35,15 @@ Bilist<T>* add(Bilist<T>* h, const T&v)
   tail -> next = node;
   h -> prev = node;
   return node;
-}
+};
+
+template <class T>
+Bilist<T>* insert(Bilist<T>* h, const T&v)
+{
+  return h -> next = add(h->next,v);
+};
+
+
 
 int main()
 {}
