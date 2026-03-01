@@ -43,7 +43,25 @@ Bilist<T>* insert(Bilist<T>* h, const T&v)
   return h -> next = add(h->next,v);
 };
 
-
+template <class T>
+Bilist<T>* cut(Bilist<T>* h) noexcept
+{
+  if(!h)
+  {
+    return nullptr;
+  }
+  if (h -> next = h)
+  {
+    delete h;
+    return nullptr;
+  }
+  Bilist<T>* ret = h -> next;
+  Bilist<T>* tail = h -> prev;
+  tail-> next = ret;
+  ret -> next = tail;
+  delete h;
+  return ret;
+};
 
 int main()
 {}
