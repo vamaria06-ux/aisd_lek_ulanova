@@ -63,5 +63,15 @@ Bilist<T>* cut(Bilist<T>* h) noexcept
   return ret;
 };
 
+template <class T>
+Bilist<T>* erase(List<T>* h) noexcept
+{
+  if (!h || h->next == h)
+  {
+    return h;
+  }
+  return h -> next = cut (h -> next);
+};
+
 int main()
 {}
